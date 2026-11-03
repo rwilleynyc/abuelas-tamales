@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src https://d2r3pvc81h83y9.cloudfront.net; connect-src 'self' https://abuelas-recipes-799780492152.auth.us-east-1.amazoncognito.com https://rk2tfggqse.execute-api.us-east-1.amazonaws.com; base-uri 'none'; object-src 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Add the tamale recipe</title>
+<link rel="stylesheet" href="editor-base.css">
+<link rel="stylesheet" href="recipe.css">
+<link rel="stylesheet" href="production.css">
+<script src="video-config.js" defer></script>
+<script src="video-player.js" defer></script>
+<script src="recipe-model.js" defer></script>
+
+<script type="module" src="boot.mjs"></script>
+</head>
+<body data-production="true">
+<div class="prototype-banner">Private recipe entry · Saving a draft does not publish it.</div>
+<a class="skip-link" href="#main">Skip to recipe editor</a>
+<header class="site-header"><a class="wordmark" href="./">Abuela’s Tamales</a><a class="back-link" href="./">← Back to the family site</a></header>
+<main id="main" class="editor-main">
+<section class="editor-intro">
+<p class="eyebrow">In her own words</p>
+<h1>Add the tamale recipe</h1>
+<p class="editor-lead">A little at a time is fine. Write it the way you remember it.</p>
+<p class="storage-note">Save a private draft to continue on another device. Preview before sending. Family notes are included if the recipe is published.</p>
+</section>
+<noscript><p class="notice error">This editor needs JavaScript. The family film remains available through its direct link.</p></noscript>
+<div id="recovery" class="notice error" hidden><h2>Your saved draft could not be opened.</h2><p>We have kept the original data untouched. Download it before starting again.</p><button type="button" id="recover-download">Download original draft</button> <button type="button" id="recover-reset">Start a new draft</button></div>
+<section id="account-panel" class="card" aria-label="Recipe account"><p id="account-status" role="status">Recipe entry is not enabled.</p><div id="account-actions"></div><div id="account-confirm" hidden></div><div id="account-preview" hidden></div></section>
+<div id="editor-layout" class="editor-layout" hidden>
+<div class="writing-column">
+<div class="draft-state"><span class="status-dot" aria-hidden="true"></span><span id="save-status" role="status" aria-live="polite">Getting your draft ready…</span></div>
+<p id="feedback" class="notice" role="status" hidden></p>
+<form id="recipe-form" novalidate>
+<section class="card basics" aria-labelledby="basics-heading">
+<h2 id="basics-heading">The recipe</h2>
+<label for="recipe-title">Recipe name</label><input id="recipe-title" name="title" type="text" maxlength="160" required autocomplete="off">
+<label for="recipe-yield">How much does it make? <span class="optional">Optional</span></label><input id="recipe-yield" name="yieldText" type="text" maxlength="200" autocomplete="off" aria-describedby="yield-help"><p class="field-help" id="yield-help">Use whatever amount you remember. It is okay to leave this blank.</p>
+</section>
+<section aria-labelledby="parts-heading" class="parts-section">
+<div class="section-title"><h2 id="parts-heading">Recipe parts</h2><span id="component-count"></span></div>
+<p class="section-help">Each part has its own ingredients and directions. Use one part for a simple recipe, or add parts such as masa, sauce, and filling.</p>
+<div id="components"></div>
+<button type="button" id="add-component" class="add-component">＋ Add another part</button>
+<div id="undo-area" class="notice" hidden><span id="undo-message"></span> <button type="button" id="undo-remove">Undo removal</button></div>
+</section>
+<section class="card" aria-labelledby="notes-heading"><h2 id="notes-heading">Anything else to remember?</h2><label for="recipe-notes">Family notes <span class="optional">Optional</span></label><textarea id="recipe-notes" name="notes" rows="4" maxlength="10000" aria-describedby="notes-help"></textarea><p class="field-help" id="notes-help">A tip, a memory, or something you would like to ask about later.</p></section>
+<div class="actions"><button type="button" id="preview-button" class="primary">Preview recipe</button><button type="button" class="export-button">Download draft (JSON)</button></div>
+<div class="file-tools"><label for="import-file">Open a downloaded draft</label><input type="file" id="import-file" accept=".json,application/json"><p class="field-help">Opening a file asks before replacing your current draft.</p></div>
+</form>
+<section id="preview-panel" hidden aria-labelledby="preview-heading" tabindex="-1"><div class="preview-top"><span class="eyebrow">Recipe preview · Not published</span><button type="button" id="edit-button">← Keep editing</button></div><div id="preview-content" class="card"></div><div class="actions"><button type="button" class="export-button">Download draft (JSON)</button><button type="button" id="print-button">Print preview</button></div><p class="notice">Previewing does not send or publish your recipe. Use the account controls above for the next step.</p></section>
+</div>
+<aside class="film-aside" aria-labelledby="video-heading"><div class="aside-inner"><p class="eyebrow">Remember together</p><h2 id="video-heading">The family film</h2><figure class="film"><div class="video-frame" id="video-frame"><img class="poster" src="family-video.jpg" width="1280" height="720" alt="Family members making tamales together in the kitchen."><a class="play-control" id="video-launch" href="https://d2r3pvc81h83y9.cloudfront.net/media/christmas-tamales-720p-v1.mp4" target="_blank" rel="noopener noreferrer" aria-label="Play the family film, Christmas Tamales, 17 minutes 33 seconds"><span class="play-circle" aria-hidden="true">▶</span></a><span class="duration" aria-hidden="true">17:33</span></div><figcaption>Christmas tamales, made together.</figcaption><p class="player-note"><a href="https://d2r3pvc81h83y9.cloudfront.net/media/christmas-tamales-720p-v1.mp4" target="_blank" rel="noopener noreferrer">Open film in another tab<span class="sr-only"> (opens a new tab)</span></a></p></figure><p class="aside-note">Pause and come back whenever you need. The ingredients and directions are yours to tell.</p><div class="privacy-note"><strong>Browser backup</strong><p>Clearing browser data erases this device’s backup. Save your private server draft and keep a downloaded copy. The film plays from the existing family video host when you press play.</p></div></div></aside>
+</div>
+</main>
+<footer>Made together. Remembered together.<br>Family recipes, preserved together.</footer>
+</body>
+</html>

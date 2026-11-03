@@ -1,0 +1,7 @@
+#account-actions, #account-confirm {display:flex;flex-wrap:wrap;gap:12px;}
+#account-confirm[hidden], #account-preview[hidden] {display:none;}
+#account-confirm p {flex-basis:100%;}
+#account-preview pre {font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;}
+#account-preview button {display:block;margin:12px 0;}
+.save-error {color:#843c2a;}
+[aria-label="Written family recipe"] pre {font:inherit;white-space:pre-wrap;overflow-wrap:anywhere;}

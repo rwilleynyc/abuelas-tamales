@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "invitationsEnabled": false,
+  "authOrigin": "https://abuelas-recipes-799780492152.auth.us-east-1.amazoncognito.com",
+  "clientId": "1eft6781aph0u3odi2kq6eeb1k",
+  "apiOrigin": "https://rk2tfggqse.execute-api.us-east-1.amazonaws.com",
+  "redirectUri": "https://abuelastamales.com/sign-in.html",
+  "logoutUri": "https://abuelastamales.com/"
+}
