@@ -28,6 +28,8 @@ export function mountInvitations({root,request,owner=false,doc=document,confirm=
   });
   if(owner)button(controls,'Review family access',async()=>{
     const data=await request('/access');if(!alive)return;results.replaceChildren();
+    status.textContent='Family access is up to date.';
+    if(!data.members.length&&!data.invitations.length)results.append(el('p','No other family editors or invitations yet. You can invite a family member when you’re ready.'));
     for(const member of data.members){
       const row=el('div',`${member.sub} — ${member.active?'Active editor':'Revoked'}`);
       if(member.active)button(row,'Revoke editor',async()=>{
