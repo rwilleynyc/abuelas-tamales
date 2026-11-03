@@ -7,3 +7,5 @@
 
 /* The private editor is available through the public homepage. */
 .recipe-entry{margin-top:26px}.recipe-entry-button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 20px;background:var(--brick,#774230);color:#fff9ed;border:1px solid var(--brick,#774230);border-radius:3px;font:600 16px/1.4 Arial,sans-serif;text-decoration:none}.recipe-entry-button:hover{background:#603524;color:#fff9ed}.recipe-entry p{font:14px/1.6 Arial,sans-serif;margin:10px 0 0;color:#59574e}.recipe-entry-button:focus-visible{outline:3px solid #3d524f;outline-offset:4px}
+
+.family-recipe-card{padding:24px 0;border-top:1px solid #d8c8b8}.family-recipe-card img{max-width:100%;max-height:360px;object-fit:cover;border-radius:8px}.family-recipe-card a{font:28px Georgia,serif;color:#873b30}
