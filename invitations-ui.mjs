@@ -3,7 +3,7 @@
 export function mountInvitations({root,request,owner=false,doc=document,confirm=window.confirm.bind(window),uuid=()=>crypto.randomUUID()}) {
   let alive=true,busy=false,pending=null;
   const el=(tag,text)=>{const n=doc.createElement(tag);n.textContent=text;return n;};
-  const status=el('p','Invite only family members you want to give editing and invitation access.');status.setAttribute('role','status');
+  const status=el('p','Invite someone to our family cookbook. Once they join, they can read full recipes, add their own, and invite other family members.');status.setAttribute('role','status');
   const label=el('label','Family member’s email');
   const email=el('input','');email.type='email';email.autocomplete='email';email.maxLength=254;label.append(email);
   const controls=el('div',''),results=el('div','');
@@ -63,6 +63,6 @@ export function mountInvitations({root,request,owner=false,doc=document,confirm=
       }results.append(row);
     }
   });
-  root.replaceChildren(el('h2','Invite family'),status,label,controls,results);
-  return {destroy(){alive=false;pending=null;email.value='';root.replaceChildren();}};
+  const heading=el('h2','Invite family');heading.tabIndex=-1;root.replaceChildren(heading,status,label,controls,results);
+  return {focusForm(){if(alive)heading.focus?.();},destroy(){alive=false;pending=null;email.value='';root.replaceChildren();}};
 }
