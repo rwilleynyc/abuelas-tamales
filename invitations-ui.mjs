@@ -1,6 +1,6 @@
 // Mount only after authentication. Not included in the deployed/static candidate.
 // request must attach the in-memory bearer and discard account-switch responses.
-export function mountInvitations({root,accessRoot=null,request,owner=false,doc=document,confirm=window.confirm.bind(window),uuid=()=>crypto.randomUUID()}) {
+export function mountInvitations({root,accessRoot=null,request,onSent=null,owner=false,doc=document,confirm=window.confirm.bind(window),uuid=()=>crypto.randomUUID()}) {
   let alive=true,busy=false,pending=null;
   const el=(tag,text)=>{const n=doc.createElement(tag);n.textContent=text;return n;};
   const status=el('p','Invite family to read full recipes, add their own, and invite others.');status.setAttribute('role','status');
@@ -16,15 +16,20 @@ export function mountInvitations({root,accessRoot=null,request,owner=false,doc=d
     if(!pending){
       if(!email.checkValidity()||!email.value.trim()){email.reportValidity();return;}
       const target=email.value.trim();
-      if(!confirm(`Send an editor invitation to ${target}? They will be able to invite other family editors.`))return;
+      if(!confirm(`Send an editor invitation to ${target}?`))return;
       pending={email:target,requestId:uuid()};email.disabled=true;
     }
     const result=await request('/invitations','POST',pending);
     if(!alive)return;
-    status.textContent=result.status==='sent'?'AWS accepted the invitation email. Delivery to their inbox is not confirmed.':`Invitation status: ${result.status}. An owner can inspect or cancel uncertain requests.`;
-    // Keep the ID across retries, including uncertain dispatch. No implicit resend.
-    send.textContent='Check this invitation again';
-    if(result.status==='sent'&&!controls.querySelector?.('[data-next-invite]')){const next=button(controls,'Invite another family member',async()=>{pending=null;email.disabled=false;email.value='';send.textContent='Send invitation';status.textContent='Choose another family member to invite.';next.remove();email.focus?.();});next.setAttribute('data-next-invite','true');}
+    if(result.status==='sent'){
+      pending=null;email.disabled=false;email.value='';send.textContent='Send invitation';
+      status.textContent='Invite family to read full recipes, add their own, and invite others.';
+      if(onSent)onSent();else{root.replaceChildren(el('p','Invitation sent'));}
+    }else{
+      status.textContent='The invitation has not been confirmed. Try again, or ask the site owner for help.';
+      send.textContent='Try again';
+    }
+
   });
   async function showAccess(){
     if(!alive||!owner||!accessRoot)return;
