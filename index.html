@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abuela’s Tamales — A family recipe</title>
+<title>Abuela’s Tamales — Family cookbook</title>
 <meta name="description" content="A family tamale recipe, preserved on film for the generations to come.">
 <meta name="robots" content="noindex, nofollow, max-image-preview:large">
 <link rel="canonical" href="https://abuelastamales.com/">
@@ -40,14 +40,14 @@
 <button id="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="family-menu" aria-expanded="false"><span aria-hidden="true">☰</span><span>Menu</span></button>
 </header>
 <main id="main">
-<div class="page-label"><p class="eyebrow">A family recipe</p><span>abuelastamales.com</span></div>
-<div class="hero">
-<section class="intro" aria-labelledby="home-title">
-<h1 id="home-title"><span>Made<br class="desktop-break"> together.</span><em>Remembered<br> together.</em></h1>
-<div class="short-rule" aria-hidden="true"></div>
-<p class="lead">Some recipes are more than instructions. They’re time spent together, passed from one generation to the next.</p>
-<div class="recipe-entry"><p id="home-auth-note">A little glimpse for everyone. The full recipes are kept for family.</p></div>
+<section class="cookbook-intro" aria-labelledby="home-title">
+<p class="eyebrow">Family cookbook</p>
+<h1 id="home-title"><span>Made together.</span><em>Remembered together.</em></h1>
+<p class="lead">A place to keep the recipes and stories our family shares.</p>
 </section>
+<section class="cookbook-collection" aria-labelledby="cookbook-heading"><h2 id="cookbook-heading" tabindex="-1">Our family cookbook</h2><p id="home-auth-note">A little glimpse for everyone. The full recipes are kept for family.</p><p id="home-status" role="status"></p><div id="family-cookbook" aria-live="polite"></div></section>
+<div class="tile-border" aria-hidden="true"></div>
+<section class="family-story" aria-labelledby="story-heading"><div class="story-intro"><p class="eyebrow">Where it began</p><h2 id="story-heading">The story behind the recipes</h2><p>Our original family kitchen film and the moments worth keeping.</p></div>
 <div class="linen">
 <figure class="film" aria-labelledby="film-caption">
 <div class="video-frame" id="video-frame">
@@ -60,17 +60,15 @@
 <noscript><p class="player-note">Use the play link to open the family video.</p></noscript>
 </figure>
 </div>
-</div>
-<div class="tile-border" aria-hidden="true"></div>
 <section class="notebook" aria-labelledby="story-title">
 <div class="notebook-copy"><h2 id="story-title">A recipe worth keeping.</h2><p>Preserving the recipe, the process, and the moments around it<br class="wide-break"> for the family who comes next.</p></div>
 <div class="notebook-aside"><p>A family recipe.<br><em>A place to keep it.</em></p><a href="https://d2r3pvc81h83y9.cloudfront.net/media/christmas-tamales-720p-v1.mp4" target="_blank" rel="noopener noreferrer">Open the family film <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></div>
 </section>
-<section aria-labelledby="cookbook-heading"><h2 id="cookbook-heading" tabindex="-1">Our family cookbook</h2><p>Recipes and memories, kept around the family table.</p><p id="home-status" role="status"></p><div id="family-cookbook"></div></section></main>
+</section></main>
 <footer><span>Abuela’s Tamales</span><p>A family recipe. A place to keep it.</p></footer>
 </div>
 <dialog id="family-menu" aria-labelledby="menu-heading"><div class="menu-top"><h2 id="menu-heading">Around the family table</h2><button id="menu-close" type="button" aria-label="Close menu">×</button></div><nav id="menu-actions" aria-label="Family cookbook"></nav></dialog>
 <dialog id="family-task" aria-labelledby="task-heading"><div class="task-top"><h2 id="task-heading" tabindex="-1">Family cookbook</h2><button id="task-close" type="button" aria-label="Close and return home">×</button></div><p id="status" role="status" aria-live="polite"></p><div id="task-body"></div></dialog>
-<div id="task-parking" hidden><p id="preview-note" hidden></p><section id="editor-panel"><div id="editor-actions" class="actions"></div><div id="workspace"><section class="panel"><h2>About the recipe</h2><label for="title">Recipe name</label><input id="title" maxlength="160" autocomplete="off"><label for="description">A short introduction <span class="note">· public when published</span></label><textarea id="description" maxlength="240" aria-describedby="description-count"></textarea><p id="description-count" class="note">240 characters remaining</p><label for="notes">Family notes <span class="note">· signed-in family only</span></label><textarea id="notes"></textarea><h3>Photos, if you’d like</h3><p class="note">Recipe photos are public when you publish. Photos in unfinished drafts stay private. JPEG, PNG or WebP, up to 15 MB each.</p><div id="photos"></div><div id="photo-controls" hidden><label for="photo-file">Choose a photo</label><input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"><label for="photo-audience">Photo placement</label><select id="photo-audience"><option value="gallery">Public recipe photo</option><option value="cover">Public cover photo</option></select><label for="photo-alt">Describe the photo</label><input id="photo-alt" maxlength="300"></div></section><section class="panel"><h2>Recipe parts</h2><p class="note">One part works beautifully. Add others for masa, filling, frosting, or finishing.</p><div id="parts"></div><button id="add-part" type="button">Add recipe part</button><button id="undo" type="button" class="secondary" hidden>Undo remove</button></section><section class="panel"><h2>Review and share</h2><p>Check the public introduction and the full family recipe separately.</p><div class="actions"><button id="review" type="button">Review recipe</button><button id="export" class="secondary" type="button">Download draft</button></div></section></div><section id="preview" class="panel" hidden aria-label="Recipe review"></section></section></div>
+<div id="task-parking" hidden><p id="preview-note" hidden></p><section id="editor-panel"><p class="editor-intro">Keep a recipe for the family. Your draft stays private until you publish.</p><div id="workspace"><section class="panel recipe-basics"><label for="title">Recipe name</label><input id="title" maxlength="160" autocomplete="off" placeholder="What do you call this recipe?"><label for="description">A short introduction <span class="note">· public when published</span></label><textarea id="description" maxlength="240" aria-describedby="description-count"></textarea><p id="description-count" class="note">240 characters remaining</p></section><section class="panel"><h2>Recipe parts</h2><p class="note">One part works beautifully. Add others for masa, filling, frosting, or finishing.</p><div id="parts"></div><button id="add-part" type="button">Add recipe part</button><button id="undo" type="button" class="secondary" hidden>Undo remove</button></section><details class="recipe-extras"><summary>Photos &amp; family notes (optional)</summary><label for="notes">Family notes <span class="note">· signed-in family only</span></label><textarea id="notes"></textarea><h3>Photos, if you’d like</h3><p class="note">Recipe photos are public when you publish. Photos in unfinished drafts stay private. JPEG, PNG or WebP, up to 15 MB each.</p><div id="photos"></div><div id="photo-controls" hidden><label for="photo-file">Choose a photo</label><input id="photo-file" type="file" accept="image/jpeg,image/png,image/webp"><label for="photo-audience">Photo placement</label><select id="photo-audience"><option value="gallery">Public recipe photo</option><option value="cover">Public cover photo</option></select><label for="photo-alt">Describe the photo</label><input id="photo-alt" maxlength="300"></div></details></div><section id="preview" class="panel" hidden aria-label="Recipe review"></section><div id="editor-actions" class="actions editor-toolbar"><button id="review" class="secondary" type="button">Preview recipe</button></div><details id="draft-options"><summary>Draft options</summary><div class="actions"><button id="export" class="secondary" type="button">Download draft</button></div></details></section></div>
 <script type="module" src="cookbook-app.mjs"></script></body>
 </html>
