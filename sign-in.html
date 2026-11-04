@@ -40,14 +40,14 @@
 <button id="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="family-menu" aria-expanded="false"><span aria-hidden="true">☰</span><span>Menu</span></button>
 </header>
 <main id="main">
-<section class="cookbook-intro" aria-labelledby="home-title">
-<p class="eyebrow">Family cookbook</p>
-<h1 id="home-title"><span>Made together.</span><em>Remembered together.</em></h1>
-<p class="lead">A place to keep the recipes and stories our family shares.</p>
+<div class="page-label"><p class="eyebrow">A family recipe</p><span>abuelastamales.com</span></div>
+<div class="hero">
+<section class="intro" aria-labelledby="home-title">
+<h1 id="home-title"><span>Made<br class="desktop-break"> together.</span><em>Remembered<br> together.</em></h1>
+<div class="short-rule" aria-hidden="true"></div>
+<p class="lead">Some recipes are more than instructions. They’re time spent together, passed from one generation to the next.</p>
+<div class="recipe-entry"><p id="home-auth-note">A little glimpse for everyone. The full recipes are kept for family.</p></div>
 </section>
-<section class="cookbook-collection" aria-labelledby="cookbook-heading"><h2 id="cookbook-heading" tabindex="-1">Our family cookbook</h2><p id="home-auth-note">A little glimpse for everyone. The full recipes are kept for family.</p><p id="home-status" role="status"></p><div id="family-cookbook" aria-live="polite"></div></section>
-<div class="tile-border" aria-hidden="true"></div>
-<section class="family-story" aria-labelledby="story-heading"><div class="story-intro"><p class="eyebrow">Where it began</p><h2 id="story-heading">The story behind the recipes</h2><p>Our original family kitchen film and the moments worth keeping.</p></div>
 <div class="linen">
 <figure class="film" aria-labelledby="film-caption">
 <div class="video-frame" id="video-frame">
@@ -60,11 +60,13 @@
 <noscript><p class="player-note">Use the play link to open the family video.</p></noscript>
 </figure>
 </div>
+</div>
+<div class="tile-border" aria-hidden="true"></div>
 <section class="notebook" aria-labelledby="story-title">
 <div class="notebook-copy"><h2 id="story-title">A recipe worth keeping.</h2><p>Preserving the recipe, the process, and the moments around it<br class="wide-break"> for the family who comes next.</p></div>
 <div class="notebook-aside"><p>A family recipe.<br><em>A place to keep it.</em></p><a href="https://d2r3pvc81h83y9.cloudfront.net/media/christmas-tamales-720p-v1.mp4" target="_blank" rel="noopener noreferrer">Open the family film <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a></div>
 </section>
-</section></main>
+<section aria-labelledby="cookbook-heading"><h2 id="cookbook-heading" tabindex="-1">Our family cookbook</h2><p>Recipes and memories, kept around the family table.</p><p id="home-status" role="status"></p><div id="family-cookbook"></div></section></main>
 <footer><span>Abuela’s Tamales</span><p>A family recipe. A place to keep it.</p></footer>
 </div>
 <dialog id="family-menu" aria-labelledby="menu-heading"><div class="menu-top"><h2 id="menu-heading">Around the family table</h2><button id="menu-close" type="button" aria-label="Close menu">×</button></div><nav id="menu-actions" aria-label="Family cookbook"></nav></dialog>
